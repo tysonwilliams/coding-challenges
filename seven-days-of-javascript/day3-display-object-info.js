@@ -18,6 +18,13 @@ Your task is to display the following:
 
 function displayInformation() {
      // var library is defined, use it to print the information
+    for (let book of library) {
+        if (book.readingStatus === false) {
+            console.log(`You still need to read '${book.title}' by ${book.author}.`);
+        } else {
+            console.log(`Already read '${book.title}' by ${book.author}.`);
+        }
+    }
 } 
 
 // tail starts here
