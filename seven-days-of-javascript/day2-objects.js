@@ -18,10 +18,9 @@ These values are assigned to an object car that has the properties type, model a
 
 */
 
-function printObjectProperty(myObject) {
-  //Write your code here
-
-} 
+function printObjectProperty(someObject) {
+    console.log(someObject);
+}
 
 // The below code is to show how to create an Object. 
 process.stdin.resume();
@@ -36,9 +35,8 @@ process.stdin.on("end", function () {
     var myObject = new Object;
   
     // Fill up the question marks
-    myObject.type = ???;
-    myObject.model = ???;
-    myObject.color = ???;
-
+    myObject.type = obj[0];
+    myObject.model = obj[1];
+    myObject.color = obj[2];
     printObjectProperty(myObject);
 });
