@@ -10,9 +10,12 @@ There is no input to be read, and there are no sample test cases.
 
 */
 
-function sortLibrary() {
-    // var library is defined, use it in your code
-    // use console.log(library) to output the sorted library data
+function sortLibrary(libraryArray) {
+    // sort library array
+    libraryArray.sort((book1, book2) => book1.title > book2.title);
+    
+    // use console.log() to output the sorted library data
+    console.log(libraryArray);
 } 
 
 // tail starts here
@@ -34,4 +37,4 @@ var library = [
     }
 ];
 
-sortLibrary();
+sortLibrary(library);
