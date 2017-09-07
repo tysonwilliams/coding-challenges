@@ -17,3 +17,28 @@ These values are assigned to an object car that has the properties type, model a
   { type: 'Fiat', model: '500', color: 'White' }
 
 */
+
+function printObjectProperty(myObject) {
+  //Write your code here
+
+} 
+
+// The below code is to show how to create an Object. 
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+    var obj = _input.split(' ');
+    var myObject = new Object;
+  
+    // Fill up the question marks
+    myObject.type = ???;
+    myObject.model = ???;
+    myObject.color = ???;
+
+    printObjectProperty(myObject);
+});
