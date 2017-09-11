@@ -33,29 +33,12 @@ Instructions:
    * @return {Promise}    - A Promise that resolves when the XHR succeeds and fails otherwise.
    */
   function get(url) {
-    /*
-    Wrap in a Promise
-     */
-    return new Promise(function(resolve, reject) {
-      var req = new XMLHttpRequest();
-      req.open('GET', url);
-      req.onload = function() {
-        if (req.status === 200) {
-          // It worked!
-          // Resolve with the data from req.response
-          resolve(req.response);
-        } else {
-          // It failed :(
-          // Be nice and reject with req.statusText
-          reject(Error(req.statusText));
-        }
-      };
-      req.onerror = function() {
-        // It failed :(
-        // Pass a 'Network Error' to reject
-        reject(Error('Network Error'));
-      };
-      req.send();
+    return fetch(url);
+  }
+
+  function getJSON(url) {
+    return get(url).then(function(response) {
+      return response.json();
     });
   }
 
@@ -68,7 +51,8 @@ Instructions:
      */
     get('http://udacity.github.io/exoplanet-explorer/site/app/data/earth-like-results.json')
     .then(function(response) {
-      addSearchHeader(response);
+      addSearchHeader(response.query);
+      console.log(response);
     })
     .catch(function(error) {
       addSearchHeader('unknown');
