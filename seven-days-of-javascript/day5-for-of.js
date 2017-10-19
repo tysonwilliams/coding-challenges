@@ -10,3 +10,11 @@ Do not declare the variable my_array.
 Add 'use strict'; at the top of your solution to use let in the for...of loop.
 
 */
+
+'use strict';
+
+for (let str of my_array) {
+    if(str === str.split("").reverse().join("")) {
+        console.log(str);
+    }
+}
